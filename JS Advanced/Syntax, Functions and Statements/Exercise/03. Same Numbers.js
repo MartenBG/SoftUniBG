@@ -1,9 +1,11 @@
 function solve(n) {
 
-    let compare = String(n);
-    let sum = compare.split('').reduce((a, b) => Number(a) + Number(b));
+    let compare = n.toString().split('');
+   // console.log(compare);
+    
+    let sum = compare.reduce((a, b) => Number(a) + Number(b));
 
-    for (let i = 1; i <= compare.length - 1; i++) {
+    for (let i = 0; i < compare.length; i++) {
         var isTheSame = true;
 
         if (compare[0] !== compare[i]) {
