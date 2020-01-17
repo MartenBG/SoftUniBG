@@ -21,8 +21,8 @@ function ttw(steps, footprint, kmh) {
         return console.log(hours + ':' + min + ':' + sec);
     }
 
-    // let result = new Date(null, null, null, null, null, timeInSeconds);
-    // console.log(result);
+    //  let result = new Date(null, null, null, null, null, timeInSeconds);
+    //  console.log(result);
     
 }
 
