@@ -12,30 +12,25 @@ function solve(arr) {
             parsedData[tempParsedJuice[0]] = Number(tempParsedJuice[1]);
         }
 
-        let bottledQ = Math.floor(parsedData[tempParsedJuice[0] / 1000]);
+        let bottledQ = Math.floor(parsedData[tempParsedJuice[0]]/1000);
 
         if (bottledQ > 0) {
             juice[tempParsedJuice[0]] = bottledQ;
         }
     }
 
-    let finalOutput = Object.entries(juice);
-
-    return finalOutput;
-    
-
-
-
-
+    Object.entries(juice).forEach(element => {
+       return console.log(`${element[0]} => ${element[1]}`); 
+    });
 
 }
 
 
-console.log(solve([
+solve([
     'Kiwi => 234',
     'Pear => 2345',
     'Watermelon => 3456',
     'Kiwi => 4567',
     'Pear => 5678',
     'Watermelon => 6789'
-]));
+]);
