@@ -1,23 +1,27 @@
 function solve(array) {
 
+    let parsedData = array.map(x => JSON.parse(x));
 
-    let data = [
-    ];
+    let createTable = content => `<table>${content}\n</table>`;
+    let createRow = content => `\n  <tr>${content}\n  </tr>`;
+    let createData = content => `\n    <td>${content}</td>`;
 
-    for (let i = 0; i < array.length; i++) {
-        const currentData = array[i].split(',');
-
-        let temp = JSON.parse(currentData);
-
-        console.log(temp);
+    let result = parsedData.reduce((accRow, row) => {
 
 
+        let tdForPerson = Object.values(row).reduce((tdAcc, td) => {
+            return tdAcc + createData(td);
+        }, '');
+        return accRow + createRow(tdForPerson);
 
-    }
+    }, '');
+
+    return createTable(result);
+
 }
 
-solve([
+console.log(solve([
     '{"name":"Pesho","position":"Promenliva","salary":100000}',
     '{"name":"Teo","position":"Lecturer","salary":1000}',
     '{"name":"Georgi","position":"Lecturer","salary":1000}'
-]);
+]));
