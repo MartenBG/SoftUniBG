@@ -74,4 +74,4 @@ solve([
     'Lambda | CoreC | C4',
     'Indice | Session | Default Storage',
     'Indice | Session | Default Security'
-]);
+  ]);
